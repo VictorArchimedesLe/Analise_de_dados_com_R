@@ -1,0 +1,5 @@
+```{r}
+dados = read.csv("russia_losses_equipment.csv")
+head(dados)
+```
+
