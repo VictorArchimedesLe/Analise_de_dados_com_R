@@ -1,0 +1,440 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"tempo.csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{";"}\NormalTok{, }\AttributeTok{na.strings =} \StringTok{""}\NormalTok{, }\AttributeTok{stringsAsFactors =}\NormalTok{ T)}
+\FunctionTok{summary}\NormalTok{(dados)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Aparencia  Temperatura         Umidade              Vento   Jogar  
+##  chuva  :5   Min.   :  64.00   Min.   : 65.00   FALSO     :7   nao:5  
+##  menos  :1   1st Qu.:  69.25   1st Qu.: 70.00   VERDADEIRO:6   sim:9  
+##  nublado:3   Median :  73.50   Median : 85.00   NA's      :1          
+##  sol    :5   Mean   : 155.57   Mean   : 89.77                         
+##              3rd Qu.:  80.75   3rd Qu.: 90.00                         
+##              Max.   :1220.00   Max.   :200.00                         
+##                                NA's   :1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(dados)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Aparencia Temperatura Umidade      Vento Jogar
+## 1       sol          85      85      FALSO   nao
+## 2       sol          80      90 VERDADEIRO   nao
+## 3   nublado          83      86      FALSO   sim
+## 4     chuva          70      NA      FALSO   sim
+## 5     chuva          68      80      FALSO   sim
+## 6     chuva          65      70 VERDADEIRO   nao
+\end{verbatim}
+
+Explorar dados categóricos - Aparencia
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{=} \FunctionTok{table}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Aparencia)}
+\FunctionTok{barplot}\NormalTok{(counts, }\AttributeTok{main =} \StringTok{"Aparencia"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Aparencia"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Resultado: 1 resultado chamado "menos"}
+\end{Highlighting}
+\end{Shaded}
+
+Explorar dados categóricos - vento
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{=} \FunctionTok{table}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Vento)}
+\FunctionTok{barplot}\NormalTok{(counts, }\AttributeTok{main =} \StringTok{"Vento"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Vento"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Resultado: Tudo ok}
+\end{Highlighting}
+\end{Shaded}
+
+Explorar dados numéricos - Temperatura
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Temperatura)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   64.00   69.25   73.50  155.57   80.75 1220.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Temperatura)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Temperatura)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-4-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Resultado: 1 dado outlier}
+\end{Highlighting}
+\end{Shaded}
+
+Explorar dados numéricos - Umidade
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   65.00   70.00   85.00   89.77   90.00  200.00       1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-5-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Resultado: 1 dado NA, 1 outlier}
+\end{Highlighting}
+\end{Shaded}
+
+Verificar valores faltantes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados[}\SpecialCharTok{!}\FunctionTok{complete.cases}\NormalTok{(dados),]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Aparencia Temperatura Umidade Vento Jogar
+## 4      chuva          70      NA FALSO   sim
+## 10     chuva          75     200  <NA>   sim
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Resultado: Falta 1 dado em Umidade e 1 em vento}
+\end{Highlighting}
+\end{Shaded}
+
+substituir valores faltantes e retirar outliers
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Umidade {-} valores NA}
+\FunctionTok{summary}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   65.00   70.00   85.00   89.77   90.00  200.00       1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 85
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados[}\FunctionTok{is.na}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade),]}\SpecialCharTok{$}\NormalTok{Umidade }\OtherTok{=} \FunctionTok{median}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\NormalTok{dados[}\SpecialCharTok{!}\FunctionTok{complete.cases}\NormalTok{(dados),]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Aparencia Temperatura Umidade Vento Jogar
+## 10     chuva          75     200  <NA>   sim
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Umidade {-} outliers e fora de dominio}
+\FunctionTok{boxplot}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados[dados}\SpecialCharTok{$}\NormalTok{Umidade }\SpecialCharTok{\textgreater{}} \DecValTok{100}\NormalTok{, ]}\SpecialCharTok{$}\NormalTok{Umidade }\OtherTok{=} \FunctionTok{median}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade, }\AttributeTok{na.rm =}\NormalTok{ T)}
+\FunctionTok{boxplot}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Umidade)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-7-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#temperatura {-} outliers e fora de dominio}
+\FunctionTok{boxplot}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Temperatura)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Limpeza-e-tratamento-de-dados_files/figure-latex/unnamed-chunk-7-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados[dados}\SpecialCharTok{$}\NormalTok{Temperatura }\SpecialCharTok{\textgreater{}} \DecValTok{130}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Aparencia Temperatura Umidade Vento Jogar
+## 8       sol        1220      95 FALSO   nao
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Temperatura)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 73.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados[dados}\SpecialCharTok{$}\NormalTok{Temperatura }\SpecialCharTok{\textgreater{}} \DecValTok{130}\NormalTok{, ]}\SpecialCharTok{$}\NormalTok{Temperatura }\OtherTok{=} \FunctionTok{median}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Temperatura)}
+\end{Highlighting}
+\end{Shaded}
+
+substituir valores faltantes e escritos errados nas variaveis
+categoricas
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Vento {-} valores NA}
+\FunctionTok{unique}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Vento)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSO      VERDADEIRO <NA>      
+## Levels: FALSO VERDADEIRO
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Vento)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      FALSO VERDADEIRO       NA's 
+##          7          6          1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados[}\FunctionTok{is.na}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Vento), ]}\SpecialCharTok{$}\NormalTok{Vento }\OtherTok{=} \StringTok{"FALSO"}
+\CommentTok{\#Aparencia {-} dados errados}
+\FunctionTok{unique}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Aparencia)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] sol     nublado chuva   menos  
+## Levels: chuva menos nublado sol
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Aparencia)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   chuva   menos nublado     sol 
+##       5       1       3       5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados[dados}\SpecialCharTok{$}\NormalTok{Aparencia }\SpecialCharTok{==} \StringTok{"menos"}\NormalTok{, ]}\SpecialCharTok{$}\NormalTok{Aparencia }\OtherTok{=} \StringTok{"sol"}
+\NormalTok{dados}\SpecialCharTok{$}\NormalTok{Aparencia }\OtherTok{=} \FunctionTok{factor}\NormalTok{(dados}\SpecialCharTok{$}\NormalTok{Aparencia)}
+\end{Highlighting}
+\end{Shaded}
+
+Conferir tabela final
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dados}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Aparencia Temperatura Umidade      Vento Jogar
+## 1        sol        85.0      85      FALSO   nao
+## 2        sol        80.0      90 VERDADEIRO   nao
+## 3    nublado        83.0      86      FALSO   sim
+## 4      chuva        70.0      85      FALSO   sim
+## 5      chuva        68.0      80      FALSO   sim
+## 6      chuva        65.0      70 VERDADEIRO   nao
+## 7        sol        64.0      65 VERDADEIRO   sim
+## 8        sol        73.5      95      FALSO   nao
+## 9        sol        69.0      70      FALSO   sim
+## 10     chuva        75.0      85      FALSO   sim
+## 11       sol        75.0      70 VERDADEIRO   sim
+## 12   nublado        72.0      90 VERDADEIRO   sim
+## 13   nublado        81.0      75      FALSO   sim
+## 14     chuva        71.0      91 VERDADEIRO   nao
+\end{verbatim}
+
+\end{document}
